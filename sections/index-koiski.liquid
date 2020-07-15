@@ -1,0 +1,180 @@
+<style>
+    .grid-container__koiski {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-gap: 12px;
+        width: 100%;
+        /* height: auto; */
+
+        align-items: stretch;
+        justify-items: center;
+
+        position: relative; /* needed for #koiski img */
+    }
+
+    .grid-item {
+        align-self: stretch;
+        justify-self: stretch;
+        
+        width: auto;
+        height: 390px;
+
+        position: relative;
+    }
+
+    .grid-item img {
+        max-width: 100%;
+        min-width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .grid-item::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        transition: all 0.5s ease-out;
+
+        background-color: #E0FF04;
+	    opacity: 0;
+    }
+    
+    .grid-item:hover::before {
+        background-color: #E0FF04;
+	    opacity: 0.8;
+    }
+
+    .koiski {
+        /* margin: auto; */
+        position: absolute;
+        width: 100%;
+        /* height: 100%; */
+        top: 46%;
+    }
+
+    .koiski img {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .grid-container-last-section .grid-item:hover {
+        opacity: 0.5;
+    }
+    
+
+    @media screen and (max-width: 1280px) {
+        .grid-item {
+            height: 250px;
+        }
+
+        .koiski {
+            top: 43%;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        .grid-item {
+            height: 200px;
+        }
+        .koiski {
+            width: 90%;
+            top: 42%;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .grid-item {
+            height: 150px;
+        }
+
+        .koiski {
+            width: 28%;
+            top: 42%;
+        }
+    }
+
+    @media screen and (max-width: 414px) {
+        .grid-container__koiski {
+            grid-gap: 6px;
+        }
+        
+        .grid-item {
+            height: 70px;
+        }
+
+        .koiski {
+            width: 20%;
+            top: 45%;
+        }
+    }
+</style>
+
+<div class="grid-container__koiski">
+    <div class="grid-item">
+        <img src="https://cdn.shopify.com/s/files/1/0425/2349/2515/files/2bbbd169675b210d40480266ff686092_1X.png?v=1594211294" alt="">
+    </div>
+    <div class="grid-item">
+        <img src="https://cdn.shopify.com/s/files/1/0425/2349/2515/files/2c34c5ee47b42df10dc57819a70785fc_1X.png?v=1594211295" alt="">
+    </div>
+    <div class="grid-item">
+        <img src="https://cdn.shopify.com/s/files/1/0425/2349/2515/files/9457929fe18d58f98d25f457d41c8ef7_1X.png?v=1594211296" alt="">
+    </div>
+    <div class="grid-item">
+        <img src="https://cdn.shopify.com/s/files/1/0425/2349/2515/files/12af2f3bf908e3a7fb98d126dad70874--winter-sports-winter-fun_1X.png?v=1594211295" alt="">
+    </div>
+    <div class="grid-item">
+        <img src="https://cdn.shopify.com/s/files/1/0425/2349/2515/files/36cdf3eb7d0237ee17174ad3b5459761--ski-outfits-ski-fashion_1X.png?v=1594211296" alt="">
+    </div>
+    <div class="grid-item">
+        <img src="https://cdn.shopify.com/s/files/1/0425/2349/2515/files/70s_1X.png?v=15942112952" alt="">
+    </div>
+
+    <div class="grid-item">
+        <img src="https://cdn.shopify.com/s/files/1/0425/2349/2515/files/DZAlTmIUMAEWWY2_1X.png?v=1594211296" alt="">
+    </div>
+    <div class="grid-item">
+        <img src="https://cdn.shopify.com/s/files/1/0425/2349/2515/files/La-doudoune-en-1967_1X.png?v=1594211295" alt="">
+    </div>
+    <div class="grid-item">
+        <img src="https://cdn.shopify.com/s/files/1/0425/2349/2515/files/photo-hans-feurer-bogner-ski-clothing-1980-1_1X.png?v=1594211296" alt="">
+    </div>
+    <div class="grid-item">
+        <img src="https://cdn.shopify.com/s/files/1/0425/2349/2515/files/VIm5V05x_o_1X.png?v=1594211295" alt="">
+    </div>
+    <div class="grid-item">
+        <img src="https://cdn.shopify.com/s/files/1/0425/2349/2515/files/Screen_Shot_2018-05-24_at_12.58.01_1X.png?v=1594211295" alt="">
+    </div>
+    <div class="grid-item">
+        <img src="https://cdn.shopify.com/s/files/1/0425/2349/2515/files/Screen_Shot_2018-05-24_at_09.55.15_1X.png?v=1594211295" alt="">
+    </div>
+  
+    <div class="koiski">
+        <img src="https://cdn.shopify.com/s/files/1/0425/2349/2515/files/koiski.png?v=1594199091" alt="">
+    </div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Koiski",
+    "settings": [
+    {
+      "id": "text-box",
+      "type": "text",
+      "label": "Heading",
+      "default": "Title"
+    },
+    {
+      "id": "text",
+      "type": "richtext",
+      "label": "Add custom text below",
+      "default": "<p>Add your text here</p>"
+    }
+  ]
+  }
+{% endschema %}

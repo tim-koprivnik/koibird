@@ -1,0 +1,108 @@
+<style>
+    .grid-container__categories {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 12px;
+        width: 100%;
+        /* height: auto; */
+
+        align-items: stretch;
+        justify-items: center;
+
+        position: relative; /* needed for #koiski img */
+    }
+
+    .grid-item {
+        align-self: stretch;
+        justify-self: stretch;
+        
+        width: auto;
+        /* height: 100px; */
+
+        position: relative;
+    }
+
+    .grid-item img {
+        max-width: 100%;
+        min-width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .grid-item::before, .grid-item::after{
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        transition: all 0.5s ease-out;
+    }
+    .grid-item::before{
+        background-color: #E0FF04;
+	    opacity: 0;
+    }
+    
+    .grid-item:hover::before{
+        background-color: #E0FF04;
+	    opacity: 0.8;
+    }
+
+
+    .koiski img {
+        margin-left: auto;
+        margin-right: auto;
+        /* margin-top: auto;
+        margin-bottom: auto; */
+        display: block;
+    }
+
+    .grid-container-last-section .grid-item:hover {
+        opacity: 0.5;
+    }
+
+
+    @media screen and (max-width: 414px) {
+        .grid-container__categories {
+            grid-gap: 6px;
+        }
+        
+        .grid-item {
+            height: 70px;
+        }
+
+        .koiski {
+            width: 20%;
+            top: 45%;
+        }
+    }
+</style>
+
+<div class="grid-container__categories">
+    <div class="grid-item">
+        <img src="https://cdn.shopify.com/s/files/1/0425/2349/2515/files/2bbbd169675b210d40480266ff686092_1X.png?v=1594211294" alt="">
+    </div>
+    <div class="grid-item">
+        <img src="https://cdn.shopify.com/s/files/1/0425/2349/2515/files/2c34c5ee47b42df10dc57819a70785fc_1X.png?v=1594211295" alt="">
+    </div>
+    <div class="grid-item">
+        <img src="https://cdn.shopify.com/s/files/1/0425/2349/2515/files/9457929fe18d58f98d25f457d41c8ef7_1X.png?v=1594211296" alt="">
+    </div>
+    <div class="grid-item">
+        <img src="https://cdn.shopify.com/s/files/1/0425/2349/2515/files/12af2f3bf908e3a7fb98d126dad70874--winter-sports-winter-fun_1X.png?v=1594211295" alt="">
+    </div>
+    <div class="grid-item">
+        <img src="https://cdn.shopify.com/s/files/1/0425/2349/2515/files/36cdf3eb7d0237ee17174ad3b5459761--ski-outfits-ski-fashion_1X.png?v=1594211296" alt="">
+    </div>
+    <div class="grid-item">
+        <img src="https://cdn.shopify.com/s/files/1/0425/2349/2515/files/70s_1X.png?v=15942112952" alt="">
+    </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Categories",
+    "settings": []
+  }
+{% endschema %}
